@@ -8,6 +8,7 @@ confg =pdfkit.configuration(wkhtmltopdf=r"C:\Program Files\wkhtmltopdf\bin\wkhtm
 
 pdfkit.from_url(url,'url.pdf',configuration=confg)
 
+
 #pdfkit.from_file('my.html', 'html.pdf',configuration=confg)
 
 
