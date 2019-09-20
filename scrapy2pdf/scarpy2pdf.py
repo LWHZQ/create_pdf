@@ -40,8 +40,8 @@ def save_pdfs(a):
           if each.string != None:
                rstr = r"[\/\\\:\*\?\"\<\>\|]"  # '/ \ : * ? " < > |' #存到本地 剔除特殊符号
                each.string = re.sub(rstr, "_", each.string)
-               file_name = os.path.join(file_path,each.string + ".pdf")
-               html_name = os.path.join(html_path,each.string + ".html")
+               file_name =file_path + each.string + ".pdf"
+               html_name = html_path + each.string + ".html"
 
                target = each.get('href')
                time.sleep(4) # 设置强制睡眠时间减少IP被禁的可能性
@@ -59,7 +59,7 @@ def save_pdfs(a):
                try: # 保存pdf格式
                     print("html_name:%s" %html_name)
                     print("file_name:%s" %file_name)
-                    pdfkit.from_file(r'C:\Users\qiang_zhang\Desktop\zhang\create_pdf\scrapy2pdf\htmls\中.html',r'C:\Users\qiang_zhang\Desktop\zhang\create_pdf\scrapy2pdf\pdfs\bb.pdf',configuration=confg, options=options) # 转化成pdf格式
+                    pdfkit.from_file(r'C:\Users\qiang_zhang\Desktop\zhang\create_pdf\scrapy2pdf\htmls\bb.html',file_name,configuration=confg, options=options) # 转化成pdf格式
                except Exception as e:
                     print(e)
 
